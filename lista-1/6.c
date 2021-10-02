@@ -20,7 +20,6 @@ int main(int argc, char const *argv[])
 	int n1,n2, a1,a2, op;
 
 	do{
-
 		printf("Insira dois numeros\n");
 		scanf("%d %d", &n1, &n2);
 
@@ -28,6 +27,7 @@ int main(int argc, char const *argv[])
 
 		duplaClassificada(op, &n1, &n2, &a1, &a2);
 		printf("%d %d\n", a1, a2);
+		
 	}while(a1 != a2);
 
 	return 0;
