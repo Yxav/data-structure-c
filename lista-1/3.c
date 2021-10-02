@@ -27,7 +27,8 @@ int main(int argc, char const *argv[])
 		higherNumber = maiorNumero(integer1, integer2);
 
 		higherNumber == -1 ? printf("Eles são iguais\n"): 0; 
-		printf("%d\n", higherNumber);
+		higherNumber != -1 ? printf("%d\n", higherNumber): 0; 
+		;
 	}
 	return 0;
 }
