@@ -20,10 +20,8 @@ void duplaCrescente(int *n1, int *n2, int *a1, int *a2);
 
 int main(int argc, char const *argv[])
 {
-	int n1,n2, *p1, *p2, a1,a2;
+	int n1,n2, a1,a2;
 
-	p1 = &n1;
-	p2 = &n2;
 
 	do{
 
