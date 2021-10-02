@@ -15,20 +15,24 @@ int main(int argc, char const *argv[])
   printf("Insira quantos elementos o vetor contem (max 10)\n");
   scanf("%d", &Q);
 
-  printf("Insira o valor minimo Y\n");
-  scanf("%d", &Y);
-
   printf("Insira os elementos do vetor \n");
   for (int index = 0; index < Q; ++index){
       scanf("%d", &Z[index]);
-      if(Z[index] > Y){
+  }
+
+  printf("Insira o valor minimo Y\n");
+  scanf("%d", &Y);
+
+  for (int index = 0; index < 10; ++index){
+    if(Z[index] > Y){
           W[flagY] = Z[index];
           flagY++;
       }
   }
 
-  for (int index2 = 0; index2 < flagY; ++index2){
-    printf("%d ", W[index2]);
+
+  for (int index = 0; index < flagY; ++index){
+    printf("%d ", W[index]);
   }
   return 0;
 }
