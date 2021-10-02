@@ -13,11 +13,11 @@
 
 #include <stdio.h>
 
-void duplaClassificada(int op, int *n1, int *n2, int *a1, int *a2);
+void duplaClassificada(int op, int *n1, int *n2);
 
 int main(int argc, char const *argv[])
 {
-	int n1,n2, a1,a2, op;
+	int n1,n2, op;
 
 	do{
 		printf("Insira dois numeros\n");
@@ -25,31 +25,27 @@ int main(int argc, char const *argv[])
 
 		op = (n1 + n2 ) % 2;
 
-		duplaClassificada(op, &n1, &n2, &a1, &a2);
-		printf("%d %d\n", a1, a2);
+		duplaClassificada(op, &n1, &n2);
+		printf("%d %d\n", n1, n2);
 		
-	}while(a1 != a2);
+	}while(n1 != n2);
 
 	return 0;
 }
 
-void duplaClassificada(int op, int *n1, int *n2, int *a1, int *a2){
+void duplaClassificada(int op, int *n1, int *n2){
+	
+	int aux = *n1;
 	if(op == 0){
 		if(*n2 < *n1){
-			*a2 = *n1;
-			*a1 = *n2;
-		}	else{
-			*a2 = *n2;
-			*a1 = *n1;
+			*n1 = *n2;
+			*n2 = aux;
 		}
 	}
 	else if(op == 1){
 		if(*n2 > *n1){
-			*a1 = *n2;
-			*a2 = *n1;
-		} else {
-			*a2 = *n2;
-			*a1 = *n1;
-		}
+			*n1 = *n2;
+			*n2 = aux;
+		} 
 	}
 }
