@@ -16,32 +16,28 @@
 
 #include <stdio.h>
 
-void duplaCrescente(int *n1, int *n2, int *a1, int *a2);
+void duplaCrescente(int *n1, int *n2);
 
 int main(int argc, char const *argv[])
 {
 	int n1,n2, a1,a2;
 
-
 	do{
-
 		printf("Insira dois numeros\n");
 		scanf("%d %d", &n1, &n2);
-		duplaCrescente(&n1, &n2, &a1, &a2);
-		printf("%d %d\n", a1, a2);
-	}while(a1 != a2);
+		duplaCrescente(&n1, &n2);
+		printf("%d %d\n", n1, n2);
+	}while(n1 != n2);
 
 	return 0;
 }
 
 
-void duplaCrescente(int *n1, int *n2, int *a1, int *a2){
+void duplaCrescente(int *n1, int *n2){
 
-	if(*n2 > *n1){
-		*a2 = *n2;
-		*a1 = *n1;
-	} else {
-		*a1 = *n2;
-		*a2 = *n1;
+	int aux = *n1;
+	if(*n2 < *n1){
+		*n1 = *n2;
+		*n2 = aux;
 	}
 }
