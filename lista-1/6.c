@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
 		op = (n1 + n2 ) % 2;
 
 		duplaClassificada(op, &n1, &n2);
-		printf("%d %d\n", n1, n2);
+		n1 != n2 ? printf("%d %d\n", n1, n2) : 0;
 		
 	}while(n1 != n2);
 

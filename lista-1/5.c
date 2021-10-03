@@ -26,7 +26,8 @@ int main(int argc, char const *argv[])
 		printf("Insira dois numeros\n");
 		scanf("%d %d", &n1, &n2);
 		duplaCrescente(&n1, &n2);
-		printf("%d %d\n", n1, n2);
+		n1 != n2 ? printf("%d %d\n", n1, n2) : 0;
+		
 	}while(n1 != n2);
 
 	return 0;
