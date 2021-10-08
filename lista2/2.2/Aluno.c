@@ -1,5 +1,4 @@
 #include "aluno.h"
-#include <stdio.h>
 
 
 float buildDateInYears(Date *data){
