@@ -8,4 +8,5 @@ typedef struct {
 } Horario;
 
 
+int buildTimeToSeconds(Horario *data);
 #endif
