@@ -30,5 +30,8 @@ void criaLista(ListaCF *lt);
 int  incluiNoFim(ListaCF *lt, Dado d);
 void exibe(ListaCF lt);
 int quantidadeDeNodos(ListaCF lt);
+int estaCheia(ListaCF lt);
+int estaVazia(ListaCF lt);
+int excluiDoFim(ListaCF *lt);
 
 #endif

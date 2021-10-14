@@ -13,7 +13,6 @@ int main() {
 	
 	criaLista(&lista);
 	do {
-		printf("0-Fim\n");
 		printf("1-Inclui no fim\n");
 		printf("2-Exibe lista\n");		
 		printf("3-Quantidade de nodos\n");
@@ -23,7 +22,8 @@ int main() {
 		printf("7-Exclui do inicio\n");
 		printf("8-Consulta por codigo\n");	
 		printf("9-Inclui antes\n");		
-		printf("10-Exclui nodo\n\n");	
+		printf("10-Exclui nodo\n");	
+		printf("11-Fim\n\n");
 		printf("Informe a operacao: ");
 		scanf("%d",&cod);
 		
@@ -37,14 +37,20 @@ int main() {
 					 	printf("ERRO: Lista Cheia!\n");
 					 else
 					    printf("Dados Incluidos com SUCESSO!\n");
-	//				 exibeErro(erro); 			
 					 break;
 			case 2 : exibe(lista);
 					 break;
 			case 3 : printf("%d\n", quantidadeDeNodos(lista));
 					 break;
-			case 4 : break;
-			case 5 : break;
+			case 4 : 
+					 if(estaCheia(lista) == 1) printf("A lista está cheia!\n");
+					 else if(estaVazia(lista) == 1) printf("A lista está vazia!\n");
+					 break;
+			case 5 : if (excluiDoFim(&lista)==LISTA_VAZIA)
+					 	printf("ERRO: Lista Vazia!\n");
+					 else
+					    printf("Dado excluido com SUCESSO!\n");
+				     break;
 			case 6 : break;
 			case 7 : break;
 			case 8 : break;

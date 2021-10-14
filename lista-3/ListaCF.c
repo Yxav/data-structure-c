@@ -44,3 +44,22 @@ void exibe(ListaCF lt) {
 int quantidadeDeNodos(ListaCF lt){
 	return lt.n;
 }
+
+
+int estaCheia(ListaCF lt){
+	if(lt.n == MAX_NODOS) return 1;
+	return 0;
+}
+int estaVazia(ListaCF lt){
+	if(lt.n == 0) return 1;
+	return 0;
+}
+
+int excluiDoFim(ListaCF *lt){
+	if (lt->n == 0)
+		return LISTA_VAZIA;
+	else {
+		lt->n--;
+		return SUCESSO;
+	}	
+}
