@@ -34,5 +34,6 @@ int estaCheia(ListaCF lt);
 int estaVazia(ListaCF lt);
 int excluiDoFim(ListaCF *lt);
 int incluiNoInicio(ListaCF *lt, Dado d);
+int excluiDoInicio(ListaCF *lt);
 
 #endif

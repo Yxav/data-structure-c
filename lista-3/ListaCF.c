@@ -56,14 +56,12 @@ int estaVazia(ListaCF lt){
 }
 
 int excluiDoFim(ListaCF *lt){
-	if (lt->n == 0)
-		return LISTA_VAZIA;
+	if (lt->n == 0) return LISTA_VAZIA;
 	else {
 		lt->n--;
 		return SUCESSO;
 	}	
 }
-
 
 int incluiNoInicio(ListaCF *lt, Dado d){
 	if (lt->n == MAX_NODOS) return LISTA_CHEIA;
@@ -73,5 +71,13 @@ int incluiNoInicio(ListaCF *lt, Dado d){
 	lt->v[0] = d;
 	lt->n++;
 	return SUCESSO;
+}
 
+int excluiDoInicio(ListaCF *lt){
+	if (lt->n == 0) return LISTA_VAZIA;
+	for (int index = 1; index < lt->n; ++index){
+		lt->v[index - 1] = lt->v[index];
+	}
+	lt->n--;
+	return SUCESSO;
 }
