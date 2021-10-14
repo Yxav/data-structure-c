@@ -51,7 +51,15 @@ int main() {
 					 else
 					    printf("Dado excluido com SUCESSO!\n");
 				     break;
-			case 6 : break;
+			case 6 : printf("Informe o codigo: ");
+					 scanf("%d",&dado.cod);
+					 printf("Informe o peso: ");
+					 scanf("%f",&dado.peso);
+					 if (incluiNoInicio(&lista,dado)==LISTA_CHEIA)
+					 	printf("ERRO: Lista Cheia!\n");
+					 else
+					    printf("Dados Incluidos com SUCESSO!\n");
+					 break;
 			case 7 : break;
 			case 8 : break;
 			case 9 : break;

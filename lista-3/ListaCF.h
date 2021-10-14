@@ -33,5 +33,6 @@ int quantidadeDeNodos(ListaCF lt);
 int estaCheia(ListaCF lt);
 int estaVazia(ListaCF lt);
 int excluiDoFim(ListaCF *lt);
+int incluiNoInicio(ListaCF *lt, Dado d);
 
 #endif

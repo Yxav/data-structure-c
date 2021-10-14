@@ -63,3 +63,15 @@ int excluiDoFim(ListaCF *lt){
 		return SUCESSO;
 	}	
 }
+
+
+int incluiNoInicio(ListaCF *lt, Dado d){
+	if (lt->n == MAX_NODOS) return LISTA_CHEIA;
+	for (int index = 0; index < lt->n; ++index){
+		lt->v[index + 1] = lt->v[index];
+	}
+	lt->v[0] = d;
+	lt->n++;
+	return SUCESSO;
+
+}
