@@ -9,7 +9,7 @@ Arquivo: mainListaCF.c
 int main() {
 	ListaCF lista;
 	Dado dado;
-	int cod;
+	int cod, codSearch;
 	
 	criaLista(&lista);
 	do {
@@ -46,10 +46,10 @@ int main() {
 					 if(estaCheia(lista) == 1) printf("A lista está cheia!\n");
 					 else if(estaVazia(lista) == 1) printf("A lista está vazia!\n");
 					 break;
-			case 5 : if (excluiDoFim(&lista)==LISTA_VAZIA)
+			case 5 : if (excluiDoFim(&lista, &dado)==LISTA_VAZIA)
 					 	printf("ERRO: Lista Vazia!\n");
 					 else
-					    printf("Dado excluido com SUCESSO!\n");
+					    printf("Dado do codigo %d foi excluido com SUCESSO!\n", dado.cod);
 				     break;
 			case 6 : printf("Informe o codigo: ");
 					 scanf("%d",&dado.cod);
@@ -60,12 +60,20 @@ int main() {
 					 else
 					    printf("Dados Incluidos com SUCESSO!\n");
 					 break;
-			case 7 : if (excluiDoInicio(&lista)==LISTA_VAZIA)
+			case 7 : if (excluiDoInicio(&lista,&dado)==LISTA_VAZIA)
 					 	printf("ERRO: Lista Vazia!\n");
 					 else
-					    printf("Dado excluido com SUCESSO!\n");			
+				     printf("Dado do codigo %d foi excluido com SUCESSO!\n", dado.cod);
 					 break;
-			case 8 : break;
+			case 8 : printf("Informe o codigo: ");
+					 scanf("%d",&codSearch);
+					 if (consultaPorCodigo(lista,&dado, codSearch)==CODIGO_INEXISTENTE){
+					 	printf("ERRO: Este código não existe!\n");
+					} else{
+				     printf("Codigo: %d Peso: %.2fKG!\n", dado.cod, dado.peso);
+
+					}
+					break;
 			case 9 : break;
 			case 10 : break;
 			}

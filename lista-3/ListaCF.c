@@ -55,7 +55,8 @@ int estaVazia(ListaCF lt){
 	return 0;
 }
 
-int excluiDoFim(ListaCF *lt){
+int excluiDoFim(ListaCF *lt, Dado *d){
+	*d = lt->v[lt->n-1];
 	if (lt->n == 0) return LISTA_VAZIA;
 	else {
 		lt->n--;
@@ -73,11 +74,23 @@ int incluiNoInicio(ListaCF *lt, Dado d){
 	return SUCESSO;
 }
 
-int excluiDoInicio(ListaCF *lt){
+int excluiDoInicio(ListaCF *lt, Dado *d){
+	*d = lt->v[0];
 	if (lt->n == 0) return LISTA_VAZIA;
 	for (int index = 1; index < lt->n; ++index){
 		lt->v[index - 1] = lt->v[index];
 	}
 	lt->n--;
 	return SUCESSO;
+}
+
+int consultaPorCodigo(ListaCF lt, Dado *d, int cod){
+
+	for (int index=0; index<lt.n; index++){
+		if(lt.v[index].cod == cod){
+			*d = lt.v[index];
+			return SUCESSO;
+		} 
+	}
+	return CODIGO_INEXISTENTE;
 }

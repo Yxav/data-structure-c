@@ -32,8 +32,9 @@ void exibe(ListaCF lt);
 int quantidadeDeNodos(ListaCF lt);
 int estaCheia(ListaCF lt);
 int estaVazia(ListaCF lt);
-int excluiDoFim(ListaCF *lt);
+int excluiDoFim(ListaCF *lt, Dado *d);
 int incluiNoInicio(ListaCF *lt, Dado d);
-int excluiDoInicio(ListaCF *lt);
+int excluiDoInicio(ListaCF *lt, Dado *d);
+int consultaPorCodigo(ListaCF lt, Dado *d, int cod);
 
 #endif
