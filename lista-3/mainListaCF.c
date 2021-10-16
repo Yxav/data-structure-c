@@ -70,17 +70,30 @@ int main() {
 					 if (consultaPorCodigo(lista,&dado, codSearch)==CODIGO_INEXISTENTE){
 					 	printf("ERRO: Este código não existe!\n");
 					} else{
-				     printf("Codigo: %d Peso: %.2fKG!\n", dado.cod, dado.peso);
-
+				     printf("Codigo: %d Peso: %.2f \n", dado.cod, dado.peso);
 					}
 					break;
-			case 9 : break;
+			case 9 : printf("Informe o codigo: ");
+					 scanf("%d",&dado.cod);
+					 printf("Informe o peso: ");
+					 scanf("%f",&dado.peso);
+					 printf("Informe o codigo: ");
+					 scanf("%d",&codSearch);
+					 if(incluiAntes(&lista,dado, codSearch)==LISTA_CHEIA){
+					 	printf("ERRO: Lista Cheia!!\n");
+					 }
+					 else if (incluiAntes(&lista, dado, codSearch)==CODIGO_INEXISTENTE){
+					 	printf("ERRO: Este código não existe!\n");
+					 } else{
+				     	printf("Dado adicionado com SUCESSO!\n");
+					 }
+					 break;
 			case 10 : break;
 			}
 		if (cod != 2)
 			exibe(lista);
 
-	} while (cod !=0);
+	} while (cod !=11);
 
 	return 0;
 }

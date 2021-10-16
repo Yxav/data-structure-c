@@ -94,3 +94,30 @@ int consultaPorCodigo(ListaCF lt, Dado *d, int cod){
 	}
 	return CODIGO_INEXISTENTE;
 }
+
+int incluiAntes(ListaCF *lt, Dado d, int cod){
+	if (lt->n == MAX_NODOS) return LISTA_CHEIA;
+	int i,position=0;
+	Dado dAux;
+
+	for (int index = 0; index < lt->n; ++index){
+		if(lt->v[index].cod == cod){
+			position = index;
+		}
+		printf("rodei aqui");
+	}
+
+	printf(" position %d\n", position);
+	if(position != 0){
+
+	for (int i = lt->n; i >= position; --i){
+		lt->v[i] = lt->v[i-1];
+	}
+		lt->v[position] = d;
+		lt->n++;
+		return SUCESSO;
+	}
+
+
+ return CODIGO_INEXISTENTE;
+}
