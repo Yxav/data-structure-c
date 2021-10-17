@@ -98,7 +98,7 @@ int consultaPorCodigo(ListaCF lt, Dado *d, int cod){
 int incluiAntes(ListaCF *lt, Dado d, int cod){
 	if (lt->n == MAX_NODOS) return LISTA_CHEIA;
 
-	int index=0 ,position=0;
+	int index=0;
 	while((lt->v[index].cod) != cod && (index <= MAX_NODOS))
 		index++;
 
@@ -106,12 +106,32 @@ int incluiAntes(ListaCF *lt, Dado d, int cod){
  		return CODIGO_INEXISTENTE;
 	}
 
-	position = index;
 	for (int i = lt->n; i >= index; --i){
 		lt->v[i] = lt->v[i - 1]; 
 	}
 	lt->v[index] = d;
 	lt->n++;
+	return SUCESSO;
+
+}
+
+int excluiNodo(ListaCF *lt, int cod, Dado *d){
+	if (lt->n == 0) return LISTA_VAZIA;
+
+	int index=0;
+	while((lt->v[index].cod) != cod && (index <= MAX_NODOS))
+		index++;
+
+
+	if(index > lt->n){
+ 		return CODIGO_INEXISTENTE;
+	}
+
+	*d = lt->v[index];
+	for (int i = index ; i <= lt->n; ++i){
+		lt->v[i] = lt->v[i + 1]; 
+	}
+	lt->n--;
 	return SUCESSO;
 
 }

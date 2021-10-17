@@ -37,6 +37,6 @@ int incluiNoInicio(ListaCF *lt, Dado d);
 int excluiDoInicio(ListaCF *lt, Dado *d);
 int consultaPorCodigo(ListaCF lt, Dado *d, int cod);
 int incluiAntes(ListaCF *lt, Dado d, int cod);
-// int excluiNodo(ListaCF lt, int cod);
+int excluiNodo(ListaCF *lt, int cod, Dado *d);
 
 #endif

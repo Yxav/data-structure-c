@@ -9,7 +9,7 @@ Arquivo: mainListaCF.c
 int main() {
 	ListaCF lista;
 	Dado dado;
-	int cod, codSearch;
+	int cod, codSearch, opFunc;
 	
 	criaLista(&lista);
 	do {
@@ -79,7 +79,7 @@ int main() {
 					 scanf("%f",&dado.peso);
 					 printf("Informe o codigo: ");
 					 scanf("%d",&codSearch);
-					 int opFunc = incluiAntes(&lista,dado, codSearch);
+					 opFunc = incluiAntes(&lista,dado, codSearch);
 					 if(opFunc == LISTA_CHEIA){
 					 	printf("ERRO: Lista Cheia!!\n");
 					 }
@@ -89,7 +89,21 @@ int main() {
 				     	printf("Dado adicionado com SUCESSO!\n");
 					 }
 					 break;
-			case 10 : break;
+			case 10 :
+					 printf("Informe o codigo: ");
+					 scanf("%d",&codSearch);
+					 opFunc = excluiNodo(&lista,codSearch, &dado);
+					 if(opFunc == LISTA_VAZIA){
+					 	printf("ERRO: Lista Vazia!!\n");
+					 }
+					 else if (opFunc == CODIGO_INEXISTENTE){
+					 	printf("ERRO: Este código não existe!\n");
+					 } else{
+					 	printf("Dado do codigo %d foi excluido com SUCESSO!\n", dado.cod);
+
+					 }
+
+			break;
 			}
 		if (cod != 2)
 			exibe(lista);
