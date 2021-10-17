@@ -79,10 +79,11 @@ int main() {
 					 scanf("%f",&dado.peso);
 					 printf("Informe o codigo: ");
 					 scanf("%d",&codSearch);
-					 if(incluiAntes(&lista,dado, codSearch)==LISTA_CHEIA){
+					 int opFunc = incluiAntes(&lista,dado, codSearch);
+					 if(opFunc == LISTA_CHEIA){
 					 	printf("ERRO: Lista Cheia!!\n");
 					 }
-					 else if (incluiAntes(&lista, dado, codSearch)==CODIGO_INEXISTENTE){
+					 else if (opFunc==CODIGO_INEXISTENTE){
 					 	printf("ERRO: Este código não existe!\n");
 					 } else{
 				     	printf("Dado adicionado com SUCESSO!\n");
