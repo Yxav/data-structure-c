@@ -21,26 +21,33 @@ int main()
 
       switch(op){
             case 1:
-                 printf("[cd][peso]\n");
-                 scanf (" %d %f", &d.cod,&d.peso);
-                 if (incluiNoInicio(&lt, d)==0)
-                    printf("Operacao Realizada com Sucesso!\n");
-                 else
+                printf("[cd][peso]\n");
+                scanf (" %d %f", &d.cod,&d.peso);
+                if (incluiNoInicio(&lt, d)==0)
+                  printf("Operacao Realizada com Sucesso!\n");
+                else
                     printf("Operacao NAO realizada: Faltou Memoria!");
-                 break;
+                break;
             case 3:
-                 printf("Quantidade de Nodos= %d\n", quantidadeDeNodos(lt));
-                 break;
+                printf("Quantidade de Nodos= %d\n", quantidadeDeNodos(lt));
+                break;
             case 4:
-                 exibeSituacao(lt);
-                 break;
+                exibeSituacao(lt);
+                break;
             case 5:
                 status = excluiNoInicio(&lt, &d);
                 if(status == SUCESSO)
                   printf("O dado com codigo: %d e peso %.2f foi excluido", d.cod, d.peso);
                 else if(status == LISTA_VAZIA)
                 printf("A lista está vazia");
-
+                break;
+            case 6:
+                printf("[cd][peso]\n");
+                scanf ("%d %f", &d.cod,&d.peso);
+                if (incluiNoFim(&lt, d)==0)
+                  printf("Operacao Realizada com Sucesso!\n");
+                else
+                  printf("Operacao NAO realizada: Faltou Memoria!");
                 break;
       }
       exibe(lt);            

@@ -77,3 +77,29 @@ int excluiNoInicio(ListaSE *lt, Dado *d){
       
     }
 }
+
+int incluiNoFim(ListaSE *lt, Dado d){
+    Nodo *pNodo, *pAux;
+    pNodo = (Nodo *) malloc (sizeof (Nodo));
+    if (pNodo == NULL)
+      return(FALTOU_MEMORIA);
+
+    
+	if (lt->inicio == NULL){
+			pNodo->info = d;
+        pNodo->prox = NULL;
+        lt->inicio = pNodo;
+		}
+
+    else {
+      pAux = lt->inicio;
+      while (pAux->prox != NULL) {
+        pAux = pAux->prox;
+      }
+
+      pNodo->info = d;
+      pNodo->prox = NULL;
+      pAux->prox = pNodo;
+      return(SUCESSO);
+    }
+}
