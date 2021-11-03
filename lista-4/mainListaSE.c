@@ -49,6 +49,12 @@ int main()
                 else
                   printf("Operacao NAO realizada: Faltou Memoria!");
                 break;
+            case 7:
+                if(excluiDoFim(&lt, &d) == 0){
+                  printf("SUCESSO");
+                  printf("O dado de codigo %d e peso %.2f foi excluido", d.cod, d.peso);
+                } else
+                  printf("LISTA VAZIA");
       }
       exibe(lt);            
     } while (op!=0);  

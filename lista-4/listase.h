@@ -30,5 +30,6 @@ int estaVazia(ListaSE lt);
 int exibeSituacao(ListaSE lt);
 int excluiNoInicio(ListaSE *lt, Dado *d);
 int incluiNoFim(ListaSE *lt, Dado d);
+int excluiDoFim(ListaSE *lt, Dado *d);
 
 #endif

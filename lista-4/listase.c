@@ -103,3 +103,27 @@ int incluiNoFim(ListaSE *lt, Dado d){
       return(SUCESSO);
     }
 }
+
+int excluiDoFim(ListaSE *lt, Dado *d){
+    Nodo *pTemp, *pNodo;
+    if (lt->inicio==NULL)
+      return(LISTA_VAZIA);
+    else {
+      if(quantidadeDeNodos(*lt)<=1){
+        lt->inicio = NULL;
+        return SUCESSO;
+      }
+      else{
+        pTemp = lt->inicio;
+        while (pTemp->prox != NULL) {
+          pNodo = pTemp;
+          pTemp = pTemp->prox;
+        }
+        pNodo->prox = NULL;
+        *d = pTemp->info;
+        free(pTemp);
+        return SUCESSO;
+      
+      }
+    }
+}
