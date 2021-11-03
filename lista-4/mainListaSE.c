@@ -65,6 +65,19 @@ int main()
               else
                 printf("CODIGO INEXISTENTE\n");
               break;
+            case 9: 
+              printf("Digite um codigo:\n");
+              scanf("%d",&cod);
+              printf("Digite o codigo:\n");
+              scanf("%d",&d.cod);
+              printf("Digite o peso:\n");
+              scanf("%f",&d.peso);
+              status = incluiDepois(&lt,cod,d);
+              if(status == 0) printf("SUCESSO");
+                else if(status == 1) printf("FALTOU MEMORIA");
+                else if(status == 3) printf("CODIGO INEXISTENTE");
+              break;
+
       }
       exibe(lt);            
     } while (op!=0);  

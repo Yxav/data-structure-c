@@ -141,3 +141,22 @@ int consultaPorCodigo(ListaSE lt, int cod ,Dado *d){
     }
     return(CODIGO_INEXISTENTE);
 }
+
+int incluiDepois(ListaSE *lt, int cod ,Dado d){
+    Nodo *pAux, *pNodo;
+
+    pNodo = (Nodo *) malloc (sizeof (Nodo));
+    
+    if (pNodo == NULL)
+      return(FALTOU_MEMORIA);
+    pAux = lt->inicio;
+    while (pAux != NULL) {
+      if(pAux->info.cod == cod){
+        pNodo->info = d;
+        pNodo->prox = pAux->prox;
+        pAux->prox = pNodo;
+        return SUCESSO;
+      }
+    }
+    return(CODIGO_INEXISTENTE);
+}
