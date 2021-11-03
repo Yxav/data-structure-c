@@ -28,5 +28,6 @@ void exibe(ListaSE lt);
 int quantidadeDeNodos(ListaSE lt);
 int estaVazia(ListaSE lt);
 int exibeSituacao(ListaSE lt);
+int excluiNoInicio(ListaSE *lt, Dado *d);
 
 #endif

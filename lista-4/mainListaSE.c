@@ -4,7 +4,7 @@
 
 int main()
 {
-    int op,cd,peso;
+    int op,cd,peso,status;
     ListaSE lt;
     Dado d;
     
@@ -34,6 +34,14 @@ int main()
             case 4:
                  exibeSituacao(lt);
                  break;
+            case 5:
+                status = excluiNoInicio(&lt, &d);
+                if(status == SUCESSO)
+                  printf("O dado com codigo: %d e peso %.2f foi excluido", d.cod, d.peso);
+                else if(status == LISTA_VAZIA)
+                printf("A lista está vazia");
+
+                break;
       }
       exibe(lt);            
     } while (op!=0);  
