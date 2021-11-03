@@ -31,5 +31,6 @@ int exibeSituacao(ListaSE lt);
 int excluiNoInicio(ListaSE *lt, Dado *d);
 int incluiNoFim(ListaSE *lt, Dado d);
 int excluiDoFim(ListaSE *lt, Dado *d);
+int consultaPorCodigo(ListaSE lt, int cod ,Dado *d);
 
 #endif

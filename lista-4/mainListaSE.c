@@ -4,7 +4,7 @@
 
 int main()
 {
-    int op,cd,peso,status;
+    int op,cd,cod,peso,status;
     ListaSE lt;
     Dado d;
     
@@ -55,6 +55,16 @@ int main()
                   printf("O dado de codigo %d e peso %.2f foi excluido", d.cod, d.peso);
                 } else
                   printf("LISTA VAZIA");
+            case 8:
+              printf("Digite um codigo:\n");
+              scanf("%d",&cod);
+              if(consultaPorCodigo(lt,cod,&d)==0){
+                printf("SUCESSO\n");
+                printf("As informações deste nodo são: %d %.2fKg",d.cod,d.peso);
+              }
+              else
+                printf("CODIGO INEXISTENTE\n");
+              break;
       }
       exibe(lt);            
     } while (op!=0);  
