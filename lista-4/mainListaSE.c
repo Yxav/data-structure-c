@@ -28,6 +28,9 @@ int main()
                 else
                     printf("Operacao NAO realizada: Faltou Memoria!");
                 break;
+            case 2:
+                exibe(lt);
+                break;
             case 3:
                 printf("Quantidade de Nodos= %d\n", quantidadeDeNodos(lt));
                 break;
@@ -76,6 +79,16 @@ int main()
               if(status == 0) printf("SUCESSO");
                 else if(status == 1) printf("FALTOU MEMORIA");
                 else if(status == 3) printf("CODIGO INEXISTENTE");
+              break;
+            case 10:
+              printf("Digite um codigo do nodo a ser:\n");
+              scanf("%d",&cod);
+              if(excluiNodo(&lt,cod,&d)==0){
+                printf("SUCESSO\n");
+                printf("Dado excluido: %d %.2f",d.cod,d.peso);
+                }
+              else
+                printf("CODIGO_INEXISTENTE\n");
               break;
 
       }
