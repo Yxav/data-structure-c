@@ -46,3 +46,7 @@ void exibe(ListaDE lt){
 int quantidadeDeNodos(ListaDE lt){
   return lt.n;
 }
+
+int estaVazia(ListaDE lt){
+  return lt.n == 0 ?  LISTA_VAZIA : 0;
+}

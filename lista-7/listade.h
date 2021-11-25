@@ -29,6 +29,8 @@ void criaLista(ListaDE *lt);
 int incluiNoInicio(ListaDE *lt, Dado d);
 void exibe(ListaDE lt);
 int quantidadeDeNodos(ListaDE lt);
+int estaVazia(ListaDE lt);
+
 
 
 

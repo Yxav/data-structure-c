@@ -31,6 +31,10 @@ int main()
       case 3:
         printf("Quantidade de nodos: %d",quantidadeDeNodos(lt));
         break;
+      case 4:
+        estaVazia(lt) == LISTA_VAZIA ? printf("A lista está vazia") : printf("A lista possui um ou mais nodos");
+        break;
+
     }
     exibe(lt);            
   } while (op!=0);  
