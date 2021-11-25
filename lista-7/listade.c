@@ -127,7 +127,27 @@ int excluiDoFim(ListaDE *lt, Dado *d){
     return SUCESSO;
   }
 }
-  
-    
 
-      
+int consultaPorCodigo(ListaDE lt, int cod, Dado *d){
+  Nodo *pAux;
+
+  if (lt.n == 0)
+		return LISTA_VAZIA;
+
+  pAux = lt.inicio;
+
+  while(pAux->prox != NULL){
+    if (pAux->info.cod == cod){
+			*d = pAux->info;
+			return SUCESSO;
+		}
+		pAux = pAux->prox;
+  }
+  if (pAux->prox == NULL && pAux->info.cod == cod){
+    *d = pAux->info;
+    return SUCESSO;
+  }
+  else
+    return CODIGO_INEXISTENTE;
+
+}

@@ -4,18 +4,18 @@
 
 int main()
 {
-  int op,cd,peso;
+  int op,cd,peso, op_code;
   ListaDE lt;
   Dado d;
   
   criaLista(&lt);
 
   do {
-    printf("\n0. Fim                         5. Exclui do Inicio         10. Inclui Depois\n");    
-    printf("1. Inclui no Inicio            6. Inclui no Fim            11. Exclui Nodo\n");    
+    printf("\n0. Fim                         5. Exclui do Inicio         \n");    
+    printf("1. Inclui no Inicio            6. Inclui no Fim            10. Exclui Nodo\n");    
     printf("2. Exibe Lista                 7. Exclui do Fim            \n");    
-    printf("3. Quantidade de Nodos         8. Verifica Existencia      \n");    
-    printf("4. Exibe Situacao da Lista     9. Consulta por Codigo      \n");
+    printf("3. Quantidade de Nodos         8. Consulta por Codigo       \n");    
+    printf("4. Exibe Situacao da Lista     9. Inclui Depois   \n");
     printf("Operacao: ");    
     scanf("%d", &op);
 
@@ -50,6 +50,20 @@ int main()
         excluiDoFim(&lt,&d)==0
         ? printf("Operacao Realizada com Sucesso!\n Dado excluido foi: %d %.2f\n",d.cod,d.peso)
         : printf("Operacao NAO realizada: Lista Vazia!\n");
+        break;
+      case 8:
+        printf("Digite um codigo:\n");
+        scanf("%d",&cd);
+        op_code = consultaPorCodigo(lt,cd,&d);
+        
+        if(op_code==0){
+          printf("Operacao Realizada com Sucesso!\n");
+          printf("O nodo consultado foi: %d %.2f\n",d.cod,d.peso);
+        }
+        if(op_code==3)
+          printf("O codigo nao existe!\n");
+        if(op_code==1)
+          printf("A lista esta vazia!\n");
         break;
     }
     exibe(lt);            
