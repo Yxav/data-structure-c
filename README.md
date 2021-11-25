@@ -20,7 +20,8 @@ O envio das listas está em progresso:
 - [x] [Lista 3](https://github.com/Yxav/data-structure-c/tree/master/lista-3 "Exercícios Lista 3")
 - [x] [Lista 4](https://github.com/Yxav/data-structure-c/tree/master/lista-4 "Exercícios Lista 4")
 - [x] [Lista 5](https://github.com/Yxav/data-structure-c/tree/master/lista-5-PE "Exercícios Lista 5")
-- [x] [Lista 6](https://github.com/Yxav/data-structure-c/tree/master/lista-6 "Exercícios Lista 5")
+- [x] [Lista 6](https://github.com/Yxav/data-structure-c/tree/master/lista-6 "Exercícios Lista 6")
+- [x] [Lista 7](https://github.com/Yxav/data-structure-c/tree/master/lista-7 "Exercícios Lista 7")
 
 ## 🗄️ Como está organizado?
 
