@@ -34,6 +34,12 @@ int main()
       case 4:
         estaVazia(lt) == LISTA_VAZIA ? printf("A lista está vazia") : printf("A lista possui um ou mais nodos");
         break;
+      case 5:
+        excluiDoInicio(&lt,&d)==0
+          ? printf("Operacao Realizada com Sucesso!\n\n Dado excluido foi: %d %.2f\n",d.cod,d.peso)
+          : printf("Operacao NAO realizada: Lista Vazia!\n");
+        break;
+      
 
     }
     exibe(lt);            

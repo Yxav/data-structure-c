@@ -29,6 +29,26 @@ int incluiNoInicio(ListaDE *lt, Dado d){
     }
 }
 
+int excluiDoInicio(ListaDE *lt, Dado *d){
+  Nodo *pNodo;
+  if (lt->n == 0)
+    return LISTA_VAZIA;
+  else {
+    *d = lt->inicio->info;
+    pNodo = lt->inicio;
+    lt->inicio = lt->inicio->prox;
+    if(lt->n == 1)
+      lt->fim = NULL;
+    else
+      lt->inicio->ant = NULL;
+    lt->n--;
+    free(pNodo);
+    return SUCESSO;
+  }
+
+
+}
+
 void exibe(ListaDE lt){
     Nodo *pAux;
     pAux = lt.inicio;
