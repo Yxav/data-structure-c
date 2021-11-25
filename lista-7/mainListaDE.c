@@ -46,6 +46,11 @@ int main()
           ? printf("Operacao Realizada com Sucesso!\n")
           : printf("Operacao NAO realizada: Faltou Memoria!");
         break;
+      case 7:
+        excluiDoFim(&lt,&d)==0
+        ? printf("Operacao Realizada com Sucesso!\n Dado excluido foi: %d %.2f\n",d.cod,d.peso)
+        : printf("Operacao NAO realizada: Lista Vazia!\n");
+        break;
     }
     exibe(lt);            
   } while (op!=0);  

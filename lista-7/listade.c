@@ -45,8 +45,6 @@ int excluiDoInicio(ListaDE *lt, Dado *d){
     free(pNodo);
     return SUCESSO;
   }
-
-
 }
 
 void exibe(ListaDE lt){
@@ -99,6 +97,34 @@ int incluiNoFim(ListaDE *lt, Dado d){
       lt->fim = pNodo;
       lt->n++;
       return SUCESSO;
+  }
+}
+
+int excluiDoFim(ListaDE *lt, Dado *d){
+  Nodo *pNodo, *last;
+  if (lt->n == 0)
+    return LISTA_VAZIA;
+  else {
+    if(lt->n == 1){
+      *d = lt->inicio->info;
+      last = lt->inicio;
+      lt->inicio = NULL;
+      lt->fim = NULL;
+      free(last);
+      lt->n--;
+      return SUCESSO;
+    }
+    last = lt->inicio;
+    while(last->prox != NULL){
+      pNodo = last;
+      last = last->prox;
+    }
+    pNodo->prox = NULL;
+    lt->fim = pNodo;
+    *d = last->info;
+    free(last);
+    lt->n--;
+    return SUCESSO;
   }
 }
   

@@ -32,6 +32,7 @@ int quantidadeDeNodos(ListaDE lt);
 int estaVazia(ListaDE lt);
 int excluiDoInicio(ListaDE *lt, Dado *d);
 int incluiNoFim(ListaDE *lt, Dado d);
+int excluiDoFim(ListaDE *lt, Dado *d);
 
 
 
