@@ -191,3 +191,52 @@ int incluiDepois(ListaDE *lt, int cod, Dado d){
     }
   }
 }
+
+int excluiNodo(ListaDE *lt, int cod, Dado *d){
+  Nodo *pAux,*pTemp, *ptem2;
+	if (lt->n == 0)
+		return LISTA_VAZIA;
+  else {
+	  pAux = lt->inicio;
+    if(quantidadeDeNodos(*lt) == 1){
+      if(pAux->info.cod == cod){
+        *d = pAux->info;
+        lt->inicio = NULL;
+        lt->fim = NULL;
+        lt->n--;
+        free(pAux);
+        return SUCESSO;
+      } else {
+          return CODIGO_INEXISTENTE;
+      }
+    }
+    else{
+      while(pAux->info.cod != cod){
+        if(pAux->prox == NULL){
+          return CODIGO_INEXISTENTE;
+        }
+        pAux = pAux->prox;
+      }
+      *d = pAux->info;
+      if(pAux->prox == NULL){
+        lt->fim = pAux->ant;
+      } else if(pAux->ant == NULL){
+        lt->inicio = pAux->prox;
+      } else{
+        pTemp = pAux->ant;
+        pTemp->prox = pAux->prox;
+        ptem2 = pAux->prox;
+        ptem2->ant = pTemp;
+      }
+      lt->n--;
+      free(pAux);
+      return SUCESSO;
+    
+
+    }
+  }
+  return CODIGO_INEXISTENTE;
+  
+}
+
+

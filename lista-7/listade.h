@@ -35,6 +35,7 @@ int incluiNoFim(ListaDE *lt, Dado d);
 int excluiDoFim(ListaDE *lt, Dado *d);
 int incluiDepois(ListaDE *lt, int cod, Dado d);
 int consultaPorCodigo(ListaDE lt, int cod, Dado *d);
+int excluiNodo(ListaDE *lt, int cod, Dado *d);
 
 
 

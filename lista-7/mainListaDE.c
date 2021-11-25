@@ -72,25 +72,45 @@ int main()
         scanf("%d",&d.cod);
         printf("Digite o peso:\n");
         scanf("%f",&d.peso);
+
+        op_code = incluiDepois(&lt,cd,d);
         
-        if (incluiDepois(&lt,cd,d)==0){
+        if (op_code==0){
           printf("Operacao Realizada com Sucesso!\n");
           break;
         }
-        if (incluiDepois(&lt,cd,d)==2){
+        if (op_code==2){
             printf("FALTOU MEMORIA\n");
             break;
         }
-        if (incluiDepois(&lt,cd,d)==3)
+        if (op_code==3)
               {
               printf("O codigo nao existe\n");
               break;
         }
-        if (incluiDepois(&lt,cd,d)==1)
+        if (op_code==1)
         {
         printf("Operacao NAO realizada:Lista Vazia\n");
         }
         break;
+      case 10:
+        printf("Digite um codigo:\n");
+        scanf("%d",&cd);
+        op_code = excluiNodo(&lt,cd,&d);
+        if(op_code==0){
+          printf("Operacao Realizada com Sucesso!\n");
+          printf("Dado excluido: %d %.2f\n",d.cod,d.peso);
+          break;
+        }
+        if(op_code==1){
+          printf("Operacao NAO realizada:Lista Vazia!\n");
+          break;
+				}
+        if(op_code==3){
+          printf("O codigo nao existe\n");
+          break;
+				}
+        break;	 
     }
     exibe(lt);            
   } while (op!=0);  
