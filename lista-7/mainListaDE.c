@@ -65,6 +65,32 @@ int main()
         if(op_code==1)
           printf("A lista esta vazia!\n");
         break;
+      case 9:
+        printf("Digite um codigo de referencia:\n");
+        scanf("%d",&cd);
+        printf("Digite o codigo:\n");
+        scanf("%d",&d.cod);
+        printf("Digite o peso:\n");
+        scanf("%f",&d.peso);
+        
+        if (incluiDepois(&lt,cd,d)==0){
+          printf("Operacao Realizada com Sucesso!\n");
+          break;
+        }
+        if (incluiDepois(&lt,cd,d)==2){
+            printf("FALTOU MEMORIA\n");
+            break;
+        }
+        if (incluiDepois(&lt,cd,d)==3)
+              {
+              printf("O codigo nao existe\n");
+              break;
+        }
+        if (incluiDepois(&lt,cd,d)==1)
+        {
+        printf("Operacao NAO realizada:Lista Vazia\n");
+        }
+        break;
     }
     exibe(lt);            
   } while (op!=0);  

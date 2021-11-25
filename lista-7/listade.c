@@ -151,3 +151,43 @@ int consultaPorCodigo(ListaDE lt, int cod, Dado *d){
     return CODIGO_INEXISTENTE;
 
 }
+
+int incluiDepois(ListaDE *lt, int cod, Dado d){
+  Nodo *pNodo,*pAux;
+	pNodo = (Nodo *) malloc (sizeof (Nodo));
+
+  if (lt->n == 0)
+		return LISTA_VAZIA;
+  
+  else {
+    if (pNodo == NULL)
+			return FALTOU_MEMORIA;
+		else {
+      pAux = lt->inicio;
+      while(pAux->prox != NULL){
+        if(pAux->info.cod == cod){
+          pNodo->info = d;
+          pNodo->prox = pAux->prox;
+          pAux->prox->ant = pNodo;
+          pAux->prox = pNodo;
+          pNodo->ant = pAux;
+
+          lt->n++;
+          return SUCESSO;
+        }
+          pAux = pAux->prox;
+      }
+      if(pAux->prox == NULL && pAux->info.cod == cod){
+        pNodo->info = d;
+        pNodo->prox = NULL;
+        pAux->prox = pNodo;
+        pNodo->ant = pAux;
+        lt->fim = pNodo;
+        lt->n++;
+        return SUCESSO;
+      }
+      else 
+        return CODIGO_INEXISTENTE;
+    }
+  }
+}
