@@ -70,3 +70,38 @@ int quantidadeDeNodos(ListaDE lt){
 int estaVazia(ListaDE lt){
   return lt.n == 0 ?  LISTA_VAZIA : 0;
 }
+
+
+int incluiNoFim(ListaDE *lt, Dado d){
+    Nodo *pNodo, *pAux;
+    pNodo = (Nodo *) malloc (sizeof (Nodo));
+    if (pNodo == NULL)
+      return(FALTOU_MEMORIA);
+
+    if(lt->n == 0){
+      pNodo->info = d;
+      pNodo->ant = NULL;
+      pNodo->prox = lt->inicio;
+      lt->fim = pNodo;
+      lt->inicio = pNodo;
+      lt->n++;
+      return SUCESSO;
+    } else{
+      pAux = lt->inicio;
+      while(pAux->prox != NULL){
+        pAux = pAux->prox;
+      }
+      pNodo->info = d;
+      pNodo->prox = NULL;
+
+      pAux->prox = pNodo;
+      pNodo->ant = pAux;
+      lt->fim = pNodo;
+      lt->n++;
+      return SUCESSO;
+  }
+}
+  
+    
+
+      
